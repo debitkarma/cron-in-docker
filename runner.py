@@ -21,3 +21,22 @@ if __name__ == "__main__":
     text = os.getenv("TEXT")
     sleep_period = int(os.getenv("SLEEP_PERIOD"))
     repetitions = int(os.getenv("REPETITIONS"))
+
+    if text and sleep_period and repetitions:
+        do_something(text=text, sleep_period=sleep_period, repetitions=repetitions)
+    else:
+        logger.warning("some ENV var is missing, running with defaults")
+        params = {}
+        if text:
+            params["text"] = text
+        else:
+            logger.debug("text missing, using defaults.")
+        if sleep_period:
+            params["sleep_period"] = sleep_period
+        else:
+            logger.debug("sleep_period missing, using defaults.")
+        if repetitions:
+            params["repetitions"] = repetitions
+        else:
+            logger.debug("repetitions missing, using defaults.")
+        do_something(**params)
