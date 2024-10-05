@@ -27,6 +27,24 @@ Things to watch for:
 - You may need to configure the user's cron/services to run even if they are not logged in.
 - The relevant command is something like `docker exec -it COMMAND`
 
+**TO DO: check to see if user cron works like user systemd service/timer units**
+
+###### SystemD units as users require the following changes due to caveats:
+
+> User units may not function correctly after reboot - until that user logs in. In order to enable user units to work on reboot without them having to log in first, or be logged in… Enable “lingering” via
+>
+> `loginctl enable-linger $USER`
+
+> To look up logs for user units, without sudo and as the user, run:
+>
+> `journalctl --user-unit $SERVICE_NAME`
+>
+> If you don't see any logs, it could be (depending on distro) that your journalctl isn't configured for persistence. You can make sure that's enabled via changing `Storage=auto` to `Storage=persistent` in the `/etc/systemd/journald.conf` file. THen restart journald:
+>
+> sudo systemctl restart systemd-journald.service
+
+
+
 ## Resources
 
 - [Sample of running cron inside a docker container, built with example dockerfile (found via a reddit thread)](https://pad.schlosser-ma.de/s/tMcArQWrM#)
