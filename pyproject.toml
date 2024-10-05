@@ -1,0 +1,8 @@
+[project]
+name = "cron-in-docker"
+version = "0.0.1"
+description = "toy project to mess around with scheduled docker tasks"
+readme = "README.md"
+dependencies = [
+    "loguru>=0.7.2",
+]
