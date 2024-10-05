@@ -29,6 +29,13 @@ Things to watch for:
 
 **TO DO: check to see if user cron works like user systemd service/timer units**
 
+My instinct is just go with systemd services+timers because of the nice journalctl logging that's built in and present, as well as notifications. I may use ntfy or a curl to uptime-kuma for the latter.
+
+- [Reddit thread on systemd vs cron](https://www.reddit.com/r/linuxadmin/comments/k8l272/systemdtimers_vs_cron/) ; this points out the infrastructure that systemd provides, as I stated above.
+- [Basic guide on how to create crontab entries and systemd units](https://akashrajpurohit.com/blog/systemd-timers-vs-cron-jobs/)
+- [Op-ed piece on why systemd might be preferable for additional reasons](https://anteru.net/blog/2024/replacing-cron-with-systemd-timers/)
+
+
 ###### SystemD units as users require the following changes due to caveats:
 
 > User units may not function correctly after reboot - until that user logs in. In order to enable user units to work on reboot without them having to log in first, or be logged in… Enable “lingering” via
