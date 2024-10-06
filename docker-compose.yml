@@ -1,0 +1,6 @@
+version: '3'
+
+services:
+  cron_in_docker:
+    image: CHANGE_THIS_TO_WHATEVER_WE_BUILT
+    env_file: .env
