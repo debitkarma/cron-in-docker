@@ -1,3 +1,6 @@
+# I think, based on current standards, this file should be named
+# docker-compose.yaml ; I'm not changing it so I can preserve the git trail
+
 services:
   dummy-app:
     container_name: dummy-app

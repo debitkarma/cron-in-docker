@@ -1,0 +1,20 @@
+# system cron format
+# usually located @ /etc/crontab or /etc/cron.d/*
+# make sure someuser is in the docker group
+# or else run as root
+# logs generally at /var/log/syslog
+#m  h dom mon dow user      command
+JOB_DIR=/path/to/workdir
+*   *  *   *   *  someuser  cd $JOB_DIR ; docker compose up -d
+
+# user crontab format
+# edited via crontab -e
+# specify a path to the working folder
+# run the command as a daemon/in the bg
+# here, we'll rely on the log file the app
+# produces for monitoring
+
+#m  h dom mon dow  command
+PATH=/path/to/workdir
+*   *  *   *   *   docker compose up -d
+
