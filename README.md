@@ -57,3 +57,5 @@ My instinct is just go with systemd services+timers because of the nice journalc
 - [Sample of running cron inside a docker container, built with example dockerfile (found via a reddit thread)](https://pad.schlosser-ma.de/s/tMcArQWrM#)
 - [aforementioned reddit thread](https://www.reddit.com/r/docker/comments/16zobfm/a_good_crontab_docker_container/)
 - [Rolling your own cron-enabled container](https://stackoverflow.com/questions/37458287/how-to-run-a-cron-job-inside-a-docker-container)
+- [Using uv with docker](https://github.com/astral-sh/uv-docker-example)
+- [Official integration guide for uv+docker](https://docs.astral.sh/uv/guides/integration/docker/)
