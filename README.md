@@ -59,3 +59,5 @@ My instinct is just go with systemd services+timers because of the nice journalc
 - [Rolling your own cron-enabled container](https://stackoverflow.com/questions/37458287/how-to-run-a-cron-job-inside-a-docker-container)
 - [Using uv with docker](https://github.com/astral-sh/uv-docker-example)
 - [Official integration guide for uv+docker](https://docs.astral.sh/uv/guides/integration/docker/)
+- [logging to syslog for systemd services, simultaneously with separate files](https://stackoverflow.com/questions/37585758/how-to-redirect-output-of-systemd-service-to-a-file)
+
