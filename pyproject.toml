@@ -1,6 +1,7 @@
 [project]
 name = "cron-in-docker"
 version = "0.0.1"
+requires-python = ">=3.11"
 description = "toy project to mess around with scheduled docker tasks"
 readme = "README.md"
 dependencies = [
