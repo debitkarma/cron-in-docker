@@ -2,6 +2,7 @@
 
 This is a toy repo to mess around with the union of cron and docker.
 
+
 ## Goals
 
 1. Test running cron jobs inside a docker container.
@@ -9,6 +10,26 @@ This is a toy repo to mess around with the union of cron and docker.
 1. Test running jobs inside a docker container via system cron.
 
 1. Assess which is most viable for a different project I'm working on.
+
+
+## Docker commands
+
+You can build this with:
+
+`docker build . -t debitkarma/cron-in-docker:latest`
+
+Then, you just have to have a working `docker-compose.yaml` (use the .yaml extension, not my .yml one), and a filled-in `.env` file in a particular folder. Make sure the image name is in the file exactly as you had it in the build command.
+
+`docker compose up` will run a container with that image, and display the logs in the terminal until it exits.
+
+`docker compose logs` will let you view logs, even after the container has exited and is down.
+
+Use the `dummy-app.service` and `dummy-app.timer` files to get things running on schedule, then you can use the `journalctl` command as you like. You can also use the mapped volume `./log` and view the `history.log` file.
+
+If you run this as a user, be sure to turn on lingering for your user, so that the timers/services work even if you are not logged in. (Check the section at the bottom of this README for that.)
+
+And, if you really want to use cron, check `crontab` to see how to do it via system crontab, or via your user crontab.
+
 
 ## Takeaways
 
@@ -49,7 +70,6 @@ My instinct is just go with systemd services+timers because of the nice journalc
 > If you don't see any logs, it could be (depending on distro) that your journalctl isn't configured for persistence. You can make sure that's enabled via changing `Storage=auto` to `Storage=persistent` in the `/etc/systemd/journald.conf` file. THen restart journald:
 >
 > sudo systemctl restart systemd-journald.service
-
 
 
 ## Resources
