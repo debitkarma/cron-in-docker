@@ -1,0 +1,12 @@
+[Unit]
+Description=dummy app for testing docker deployment
+After=network-online.target
+
+[Service]
+Type=exec
+User=debitkarma
+WorkingDirectory=/home/debitkarma/projects/dummy-app
+ExecStart=/usr/bin/docker compose up -f /home/debitkarma/projects/dummy-app/docker-compose.yml
+
+[Install]
+WantedBy=multi-user.target
