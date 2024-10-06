@@ -18,7 +18,7 @@ def do_something(
 
 
 if __name__ == "__main__":
-    logger.add("history.log")
+    logger.add("/log/history.log")
     text = os.getenv("TEXT")
     sleep_period = os.getenv("SLEEP_PERIOD")
     repetitions = os.getenv("REPETITIONS")

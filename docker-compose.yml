@@ -1,5 +1,7 @@
 services:
   dummy-app:
     container_name: dummy-app
-    image: debitkarma/cron-in-docker
+    image: debitkarma/cron-in-docker:0.0.2
     env_file: .env
+    volumes:
+      - ./log:/log
