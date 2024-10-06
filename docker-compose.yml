@@ -1,6 +1,5 @@
-version: '3'
-
 services:
-  cron_in_docker:
-    image: CHANGE_THIS_TO_WHATEVER_WE_BUILT
+  dummy-app:
+    container_name: dummy-app
+    image: debitkarma/cron-in-docker
     env_file: .env
