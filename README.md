@@ -3,13 +3,29 @@
 This is a toy repo to mess around with the union of cron and docker.
 
 
+## TL;DR
+
+It's easy to write systemd service+timer files. They have many more options (such as letting you output to system logs or individual log files), they support environment variables, and they can be more finely tuned than crontab entries. Just do that. It takes no extra time.
+
+Build the container using the `Dockerfile`'s multistage build. `uv` does the heavy lifting rather easily.
+
+Use the `docker-compose.yaml` file as a template to run this easily and quickly.
+
+The build should work for most of my python projects, old or new. I should turn this into a template repo with `args` for `docker build` to use automatically...
+
+ALSO, I should configure a git action to build this after changes are pushed and a tag is released, so that it's included in the template repo.
+
+
 ## Goals
 
-1. Test running cron jobs inside a docker container.
+1. ~~Test running cron jobs inside a docker container.~~ Apparently, don't.
 
 1. Test running jobs inside a docker container via system cron.
 
-1. Assess which is most viable for a different project I'm working on.
+1. ~~Assess which is most viable for a different project I'm working on.~~ Done!
+
+1. Test running jobs via systemd timer, and checking logs via journalctl.
+  - do this both as user and system services
 
 
 ## Docker commands
